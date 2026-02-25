@@ -1,0 +1,49 @@
+@use "../abstract/" as *;
+@use "../base/" as *;
+
+.header{
+    padding: 3rem 0;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    &__wrapper{
+        @include between;
+    }
+    &__logo{
+        a > h5 {
+            color: $clr--dark;
+        }
+        }
+    &__nav{
+        ul{
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            li a{
+                color: $clr--dark;
+                font-weight: 600;
+               @include mediaQuery(520px){
+                color: $clr--light;
+               }
+            }
+            @include mediaQuery(520px){
+            background-color: $clr--dark;
+            height: 100vh;
+            width: 100%;
+            position: fixed;
+            right: -100%;
+            z-index: 999;
+            margin-top: 4rem;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            text-align: center;
+            transition: all 0.5s ease;  
+            padding-top: 3rem;              
+            }
+        }
+        @include mediaQuery(520px){
+        &.open ul{
+        right: 0;
+        transition: all 0.5s ease;
+        }
+    }
+    }}
