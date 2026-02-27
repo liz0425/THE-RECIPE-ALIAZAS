@@ -1321,6 +1321,7 @@ fieldset,
 form,
 label,
 input,
+.contactBanner__left form textarea,
 textarea,
 legend,
 table,
@@ -1380,6 +1381,91 @@ img {
   list-style: none;
 }
 
+.card {
+  width: 100%;
+  color: #666666;
+}
+.card img {
+  width: 100%;
+}
+.card__details {
+  padding: 2rem;
+}
+.card__details h4, .card__details p {
+  margin-bottom: 2rem;
+}
+.card__details small {
+  text-transform: uppercase;
+  color: #D9964A;
+  letter-spacing: 1rem;
+  margin-bottom: 2rem;
+}
+
+.cardIcon {
+  padding: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.cardIcon img {
+  width: 7rem;
+}
+.cardIcon__details h4 {
+  margin: 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background-color: transparent;
+  border: 1px solid transparent;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.btn.btn--light {
+  background-color: #dedbdb;
+  color: #666666;
+  border: 1px solid #666666;
+}
+.btn.btn--light:hover {
+  background-color: #666666;
+  color: #dedbdb;
+  border: 1px solid #dedbdb;
+  transition: 0.5s ease;
+}
+.btn.btn--dark {
+  background-color: #666666;
+  color: #dedbdb;
+  border: 1px solid #dedbdb;
+}
+.btn.btn--dark:hover {
+  background-color: #dedbdb;
+  color: #666666;
+  border: 1px solid #666666;
+  transition: 0.5s ease;
+}
+.btn.btn--primary {
+  background-color: #D9964A;
+  color: #dedbdb;
+  border: 1px solid #D9964A;
+}
+.btn.btn--primary:hover {
+  background-color: #dedbdb;
+  color: #D9964A;
+  border: 1px solid #D9964A;
+  transition: 0.5s ease;
+}
+
+.listButton {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+@media screen and (max-width: 520px) {
+  .listButton {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
 .header {
   padding: 3rem 0;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -1387,19 +1473,20 @@ img {
 .header__wrapper {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
-.header__logo a > h5 {
+.header__logo a > h3 {
   color: #666666;
+}
+.header__nav {
+  margin-left: 37rem;
+  font-size: 0.75rem;
 }
 .header__nav ul {
   display: flex;
-  align-items: center;
   gap: 3rem;
 }
 .header__nav ul li a {
   color: #666666;
-  font-weight: 600;
 }
 @media screen and (max-width: 520px) {
   .header__nav ul li a {
@@ -1428,4 +1515,665 @@ img {
     right: 0;
     transition: all 0.5s ease;
   }
+}
+
+.footer {
+  padding: 2rem 0;
+  color: #666666;
+}
+.footer__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.footer__wrapper ul {
+  display: flex;
+  gap: 1rem;
+}
+.footer__wrapper li a {
+  color: #666666;
+}
+
+.homeBanner {
+  padding: 4rem 0;
+}
+.homeBanner__wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  align-items: center;
+}
+@media screen and (max-width: 520px) {
+  .homeBanner__wrapper {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+.homeBanner__left small {
+  text-transform: uppercase;
+  color: #D9964A;
+  letter-spacing: 1rem;
+}
+.homeBanner__left h2 {
+  font-family: "Playfair Display", serif;
+  line-height: 4rem;
+  margin: 2rem 0;
+}
+.homeBanner__left p {
+  margin-bottom: 2rem;
+}
+
+.homeAbout {
+  padding: 4rem 0;
+}
+.homeAbout__wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  align-items: center;
+}
+@media screen and (max-width: 520px) {
+  .homeAbout__wrapper {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+.homeAbout--a {
+  grid-area: a;
+}
+.homeAbout--b {
+  grid-area: b;
+}
+.homeAbout--c {
+  grid-area: c;
+}
+.homeAbout__left ul {
+  display: grid;
+  grid-template-areas: "a c" "b c";
+  align-items: center;
+  gap: 1rem;
+}
+.homeAbout__right h2 {
+  margin-bottom: 1rem;
+}
+.homeAbout__right p {
+  margin-bottom: 2rem;
+}
+
+.homeClass {
+  padding: 4rem 0;
+}
+.homeClass__slider {
+  display: flex;
+  gap: 2rem;
+}
+.homeClass__wrapper .title {
+  display: flex;
+  align-items: center;
+  color: #D9964A;
+  margin-bottom: 3rem;
+}
+.homeClass__wrapper .title::before, .homeClass__wrapper .title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #D9964A;
+  display: block;
+  align-self: center;
+}
+.homeClass__wrapper .title::before {
+  margin-right: 1rem;
+}
+.homeClass__wrapper .title::after {
+  margin-left: 1rem;
+}
+.homeClass__wrapper .title .title h4 {
+  color: #D9964A;
+  font-family: "Playfair Display", serif;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.homeClass__wrapper .card {
+  background-color: transparent;
+  text-align: center;
+}
+.homeClass__wrapper .card__details {
+  padding: 1rem 0 0 0;
+}
+.homeClass__wrapper .card__details small {
+  color: #D9964A;
+  padding-bottom: 2rem;
+  letter-spacing: 1rem;
+}
+.homeClass__wrapper .card__details h4 {
+  padding-top: 1rem;
+  font-family: "Playfair Display", serif;
+}
+.homeClass__wrapper .card__details p {
+  text-align: justify;
+}
+.homeClass__wrapper .card img {
+  height: 30rem;
+}
+.homeClass .listButton {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.recipeCollection .container .title {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  font-weight: bold;
+}
+.recipeCollection .container .title::after {
+  flex: 1;
+  content: " ";
+  height: 1px;
+  background: #D9964A;
+  margin-left: 1rem;
+}
+.recipeCollection .container h4 {
+  padding: 2rem 0 2rem 0;
+  font-family: "Playfair Display", serif;
+  color: #D9964A;
+}
+.recipeCollection__wrapper {
+  padding-bottom: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  align-items: center;
+}
+@media screen and (max-width: 520px) {
+  .recipeCollection__wrapper {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+.recipeCollection__left small {
+  text-transform: uppercase;
+  color: #D9964A;
+  letter-spacing: 1rem;
+}
+.recipeCollection__left h2 {
+  font-family: "Playfair Display", serif;
+  line-height: 4rem;
+  margin: 2rem 0;
+}
+.recipeCollection__left p {
+  margin-bottom: 2rem;
+}
+.recipeCollection__right small {
+  text-transform: uppercase;
+  color: #D9964A;
+  letter-spacing: 1rem;
+}
+.recipeCollection__right h2 {
+  font-family: "Playfair Display", serif;
+  line-height: 4rem;
+  margin: 2rem 0;
+}
+.recipeCollection__right p {
+  margin-bottom: 2rem;
+}
+
+.newsletter {
+  padding: 4rem 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5)), url(../../images/bell_pepper.jpeg);
+  background-size: cover;
+  opacity: 100%;
+  padding: 10rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.newsletter .title h2 {
+  color: #F9E9D7;
+}
+.newsletter__slider {
+  display: flex;
+  gap: 2rem;
+}
+.newsletter__wrapper .title h2 {
+  color: #fff;
+  font-family: "Playfair Display", serif;
+}
+.newsletter__wrapper .card {
+  background-color: transparent;
+  text-align: center;
+}
+.newsletter__wrapper .card__details {
+  padding: 1rem 0 0 0;
+}
+.newsletter__wrapper .card__details small {
+  color: #D9964A;
+  padding-bottom: 2rem;
+}
+.newsletter__wrapper .card__details h4 {
+  padding-top: 1rem;
+}
+.newsletter__wrapper .card__details p {
+  color: #fff;
+  padding-bottom: 2rem;
+}
+
+.subscribe {
+  display: flex;
+  width: 100%;
+  max-width: 700px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.subscribe input {
+  flex: 1;
+  padding: 15px 20px;
+  border: none;
+  font-size: 16px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.subscribe button {
+  padding: 0 30px;
+  border: none;
+  background: #D9964A;
+  font-size: 16px;
+  margin: 0 auto;
+}
+
+.classicCollection {
+  padding: 4rem 0;
+}
+.classicCollection .title {
+  display: flex;
+  align-items: center;
+}
+.classicCollection .title::after {
+  flex: 1;
+  content: " ";
+  height: 1px;
+  background: #D9964A;
+  margin-left: 1rem;
+}
+.classicCollection .title {
+  margin-bottom: 3rem;
+  color: #D9964A;
+}
+.classicCollection .title h3 {
+  font-family: "Playfair Display", serif;
+}
+.classicCollection__wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+@media screen and (max-width: 520px) {
+  .classicCollection__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+}
+.classicCollection .recipeCards {
+  display: grid;
+  height: 10rem;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+}
+.classicCollection .recipeCards .left img {
+  width: 9rem;
+  height: 10rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.classicCollection .recipeCards .right small {
+  color: #D9964A;
+  font-size: 18px;
+  letter-spacing: 10px;
+}
+.classicCollection .recipeCards .right h4 {
+  font-family: "Playfair Display", serif;
+}
+.classicCollection .recipeCards .right ul {
+  display: flex;
+}
+.classicCollection .recipeCards .right ul li a {
+  color: #D9964A;
+}
+
+.aboutBanner__img img {
+  height: 850px;
+}
+.aboutBanner {
+  height: 900px;
+  padding: 4rem 0;
+}
+.aboutBanner__wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+@media screen and (max-width: 520px) {
+  .aboutBanner__wrapper {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+.aboutBanner__left {
+  display: flex;
+  flex-direction: column;
+}
+.aboutBanner h2 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(3rem, 7vw, 4.5rem);
+  margin: 2rem 0;
+}
+
+.info__address {
+  margin-top: 2rem;
+}
+
+.aboutContent__wrapper {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  padding-top: 15rem;
+  padding-bottom: 5rem;
+  gap: 5rem;
+}
+.aboutContent .title h2 {
+  font-family: "Playfair Display", serif;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+.aboutContent .title p {
+  text-align: justify;
+}
+
+.aboutContent__right-title h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 35px;
+  color: #D9964A;
+}
+
+.recent__items {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-top: 5rem;
+}
+
+.recent__img {
+  width: 120px;
+}
+
+.star {
+  font-size: 20px;
+  margin-top: 0.5rem;
+  color: #D9964A;
+  margin-bottom: 0.5rem;
+}
+
+.recent__txt h5 {
+  letter-spacing: 1rem;
+  color: #D9964A;
+}
+.recent__txt p {
+  font-family: "Playfair Display", serif;
+  margin-top: 0.5rem;
+}
+
+.topcontactBanner {
+  height: 900px;
+  padding: 4rem 0;
+}
+.topcontactBanner__wrapper {
+  margin: 0 auto;
+}
+@media screen and (max-width: 520px) {
+  .topcontactBanner__wrapper {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+.topcontactBanner__left .topcontactBanner__img img {
+  height: 850px;
+  width: 100%;
+}
+.topcontactBanner__left small {
+  text-transform: uppercase;
+  color: #D9964A;
+  letter-spacing: 1rem;
+}
+.topcontactBanner__left h2 {
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  line-height: 4rem;
+  margin: 3rem 0;
+}
+.topcontactBanner__left p {
+  margin-bottom: 2rem;
+}
+.topcontactBanner__left img {
+  width: 100%;
+  height: 600px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.contactBanner {
+  padding: 15rem 0;
+  position: relative;
+}
+.contactBanner__title {
+  max-width: 50rem;
+  margin-bottom: 2rem;
+}
+@media screen and (max-width: 520px) {
+  .contactBanner__title {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+.contactBanner__title h2 {
+  font-family: "Playfair Display", serif;
+  padding-bottom: 2rem;
+}
+.contactBanner__wrapper {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 5rem;
+}
+@media screen and (max-width: 520px) {
+  .contactBanner__wrapper {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+.contactBanner__left form {
+  display: flex;
+  flex-direction: column;
+}
+.contactBanner__left form input, .contactBanner__left form textarea {
+  margin: 0.5rem 0 2rem;
+  width: 100%;
+  padding: 1rem;
+  background-color: transparent;
+  border: 1px solid #000;
+}
+.contactBanner__left form textarea {
+  height: 10rem;
+  border: 1px solid #000;
+}
+.contactBanner__left form input::-moz-placeholder, .contactBanner__left form textarea::-moz-placeholder {
+  font-family: "Mulish", sans-serif;
+  color: #dedbdb;
+}
+.contactBanner__left form input::placeholder, .contactBanner__left form textarea::placeholder {
+  font-family: "Mulish", sans-serif;
+  color: #dedbdb;
+}
+.contactBanner__left form input:focus, .contactBanner__left form textarea:focus,
+.contactBanner__left form input:enabled,
+.contactBanner__left form textarea:enabled {
+  color: #dedbdb;
+}
+.contactBanner__left form button {
+  width: 10rem;
+}
+.contactBanner__left--name {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+.contactBanner__right {
+  display: flex;
+  justify-content: center;
+}
+.contactBanner__right .contact-card {
+  background-color: #D9964A;
+  color: #fff;
+  padding: 3rem;
+  width: 100%;
+  max-width: 420px;
+}
+.contactBanner__right .contact-card h4 {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+.contactBanner__right .contact-item {
+  margin-bottom: 1.8rem;
+}
+.contactBanner__right .contact-item span {
+  display: block;
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-bottom: 0.4rem;
+}
+.contactBanner__right .contact-item p {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.contactBanner__right .contact-item i {
+  margin-top: 0.2rem;
+}
+
+.tutorialsBanner {
+  height: 900px;
+  padding: 4rem 0;
+}
+@media screen and (max-width: 520px) {
+  .tutorialsBanner {
+    padding-top: 170px;
+  }
+}
+.tutorialsBanner .title {
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 520px) {
+  .tutorialsBanner .title {
+    flex-direction: column;
+  }
+}
+.tutorialsBanner .title h2 {
+  font-family: "Playfair Display", serif;
+  max-width: 40%;
+}
+@media screen and (max-width: 520px) {
+  .tutorialsBanner .title h2 {
+    max-width: 100%;
+  }
+}
+.tutorialsBanner .title p > span {
+  font-family: "Mulish", sans-serif;
+  font-weight: 700;
+}
+.tutorialsBanner .title p {
+  margin: 0;
+  align-self: flex-end;
+}
+@media screen and (max-width: 520px) {
+  .tutorialsBanner .title p {
+    margin-top: 0.5rem;
+    align-self: flex-start;
+  }
+}
+.tutorialsBanner__details {
+  position: relative;
+  padding: 2rem 0;
+  margin: 4rem 0;
+  display: flex;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (max-width: 520px) {
+  .tutorialsBanner__details {
+    margin: 2rem 0;
+    padding: 1rem 0;
+  }
+}
+.tutorialsBanner__details p > span {
+  font-family: "Mulish", sans-serif;
+  font-weight: 700;
+}
+.tutorialsBanner__details::before, .tutorialsBanner__details::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #666666;
+}
+.tutorialsBanner__details::before {
+  top: 0;
+}
+.tutorialsBanner__details::after {
+  bottom: 0;
+}
+.tutorialsBanner__wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+}
+@media screen and (max-width: 520px) {
+  .tutorialsBanner__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.tutorialsBanner__left img {
+  height: 100%;
+}
+.tutorialsBanner__right {
+  background-color: #D9964A;
+}
+.tutorialsBanner__right .tutorial__details {
+  margin: 2rem 0;
+  padding: 4rem;
+  color: #dedbdb;
+  font-family: "Mulish", sans-serif;
+}
+.tutorialsBanner__right .tutorial__details h3 {
+  margin-bottom: 2rem;
+}
+.tutorialsBanner__right .tutorial__details p {
+  font-size: 16px;
+  margin-bottom: 1rem;
 }/*# sourceMappingURL=main.min.css.map */
